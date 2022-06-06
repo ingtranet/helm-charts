@@ -53,6 +53,7 @@ spec:
       port: 2181
       protocol: TCP
   type: ClusterIP
+  clusterIP: None
   selector:
     app: {{ template "kyuubi.name" . }}
     release: {{ .Release.Name }}
