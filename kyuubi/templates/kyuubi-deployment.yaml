@@ -39,6 +39,11 @@ spec:
         - name: kyuubi-server
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: SPARK_LOCAL_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
           ports:
             - name: frontend-port
               containerPort: {{ .Values.server.bind.port }}
