@@ -35,3 +35,24 @@ spec:
   selector:
     app: {{ template "kyuubi.name" . }}
     release: {{ .Release.Name }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kyuubi-zk-svc
+  labels:
+    app: {{ template "kyuubi.name" . }}
+  {{- with .Values.service.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  ports:
+    - name: zookeeper
+      port: 2181
+      protocol: TCP
+  type: ClusterIP
+  selector:
+    app: {{ template "kyuubi.name" . }}
+    release: {{ .Release.Name }}
