@@ -43,6 +43,9 @@ spec:
             - name: frontend-port
               containerPort: {{ .Values.server.bind.port }}
               protocol: TCP
+            - name: zookeeper
+              containerPort: 2181
+              protocol: TCP
           {{- if .Values.probe.liveness.enabled }}
           livenessProbe:
             tcpSocket:
