@@ -40,7 +40,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: SPARK_LOCAL_IP
+            - name: SPARK_LOCAL_HOSTNAME
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
