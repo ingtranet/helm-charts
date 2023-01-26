@@ -42,8 +42,18 @@ probe:
 
 server:
   bind:
-    host: 0.0.0.0
-    port: 10009
+    thrift:
+      host: 0.0.0.0
+      port: 10009
+    mysql:
+      host: 0.0.0.0
+      port: 3309
+    rest:
+      host: 0.0.0.0
+      port: 10099
+    trino:
+      host: 0.0.0.0
+      bind: 10999
   conf:
     mountPath: /opt/kyuubi/conf
 

@@ -45,8 +45,14 @@ data:
     #
     # kyuubi.authentication           NONE
     #
-    kyuubi.frontend.bind.host={{ .Values.server.bind.host }}
-    kyuubi.frontend.bind.port={{ .Values.server.bind.port }}
+    kyuubi.frontend.thrift.binary.bind.host={{ .Values.server.bind.thrift.host }}
+    kyuubi.frontend.thrift.binary.bind.port={{ .Values.server.bind.thrift.port }}
+    kyuubi.frontend.mysql.bind.host={{ .Values.server.bind.mysql.host }}
+    kyuubi.frontend.mysql.bind.port={{ .Values.server.bind.mysql.port }}
+    kyuubi.frontend.rest.bind.host={{ .Values.server.bind.rest.host }}
+    kyuubi.frontend.rest.bind.port={{ .Values.server.bind.rest.port }}
+    kyuubi.frontend.trino.bind.host={{ .Values.server.bind.trino.host }}
+    kyuubi.frontend.trino.bind.port={{ .Values.server.bind.trino.port }}
 
     # Details in https://kyuubi.apache.org/docs/latest/deployment/settings.html
   {{- range $configValue := .Values.additionalConfigProperties }}

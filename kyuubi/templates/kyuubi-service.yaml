@@ -27,9 +27,17 @@ metadata:
   {{- end }}
 spec:
   ports:
-    - name: http
-      nodePort: {{ .Values.service.port }}
-      port: {{ .Values.server.bind.port }}
+    - name: thrift
+      port: {{ .Values.server.bind.thrift.port }}
+      protocol: TCP
+    - name: mysql
+      port: {{ .Values.server.bind.mysql.port }}
+      protocol: TCP
+    - name: rest
+      port: {{ .Values.server.bind.rest.port }}
+      protocol: TCP
+    - name: trino
+      port: {{ .Values.server.bind.trino.port }}
       protocol: TCP
   type: {{ .Values.service.type }}
   selector:
