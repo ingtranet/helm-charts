@@ -53,7 +53,7 @@ server:
       port: 10099
     trino:
       host: 0.0.0.0
-      bind: 10999
+      port: 10999
   conf:
     mountPath: /opt/kyuubi/conf
 
