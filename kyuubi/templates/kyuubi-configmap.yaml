@@ -45,7 +45,7 @@ data:
     #
     # kyuubi.authentication           NONE
     #
-    kyuubi.frontend.protocols=THRIFT_BINARY,REST,MYSQL
+    kyuubi.frontend.protocols=THRIFT_BINARY,REST,MYSQL,TRINO
     kyuubi.frontend.thrift.binary.bind.host={{ .Values.server.bind.thrift.host }}
     kyuubi.frontend.thrift.binary.bind.port={{ .Values.server.bind.thrift.port }}
     kyuubi.frontend.mysql.bind.host={{ .Values.server.bind.mysql.host }}
